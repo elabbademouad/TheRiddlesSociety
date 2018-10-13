@@ -1,0 +1,45 @@
+<ion-header >
+  <ion-navbar color='primary'>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>  
+    <ion-searchbar
+      showCancelButton="true">
+    </ion-searchbar>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <div *ngFor="let item of items">
+        <ion-card  (click)="detail(item)"  >
+            <ion-item color="light">
+              <h2  ion-text text-wrap  color="dark" style="font-weight: 500;">{{item.title}}</h2>
+              <p ion-text>{{item.date}}</p>
+            </ion-item>        
+            <img src="{{item.image}}">       
+            <ion-card-content  >
+              <p class="item item-text-wrap"  >{{item.text}}</p>
+            </ion-card-content>
+            <ion-row>
+              <ion-col>
+                <button ion-button icon-start clear small >
+                  <ion-icon name="thumbs-up"></ion-icon>
+                  <div>12 Likes</div>
+                </button>
+              </ion-col>
+              <ion-col>
+                <button ion-button icon-start clear small>
+                  <ion-icon name="text"></ion-icon>
+                  <div>4 Comments</div>
+                </button>
+              </ion-col>
+              <ion-col  >
+                <ion-note center text-center>
+                  11h ago
+                </ion-note>
+              </ion-col>
+            </ion-row>
+        </ion-card>  
+    </div>
+        
+</ion-content>
